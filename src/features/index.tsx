@@ -1,2 +1,2 @@
-import Main from "@/src/features/pages/Main"
-export {Main}
+import Header from '@/src/features/pages/Header';
+export { Header };
