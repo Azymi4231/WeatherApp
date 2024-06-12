@@ -1,4 +1,8 @@
+'use client';
+
 import '../theme/globals.css';
+import { store } from '../redux/store';
+import { Provider } from 'react-redux';
 
 export default function RootLayout({
   children,
@@ -7,9 +11,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex h-screen w-full flex-grow overflow-hidden bg-sky-100">
-        {children}
-      </body>
+      <Provider store={store}>
+        <body className="flex h-screen w-full flex-grow overflow-hidden bg-sky-100">
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }
