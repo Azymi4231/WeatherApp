@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Provider store={store}>
-        <body className="flex h-screen w-full flex-grow overflow-hidden bg-sky-100">
+        <body className={`flex h-screen w-full flex-grow overflow-hidden`}>
           {children}
         </body>
       </Provider>

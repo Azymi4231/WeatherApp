@@ -12,12 +12,23 @@ const Main = () => {
   const curentTemp = useSelector(
     (state: RootState) => state.weather.curentTemp,
   );
-
+  const curentHumidity = useSelector(
+    (state: RootState) => state.weather.curentHumidity,
+  );
+  const curentPressure = useSelector(
+    (state: RootState) => state.weather.curentPressure,
+  );
   return (
     <div className="flex flex-col items-center gap-4">
-      <Image src={Weather} alt="ImageOfWeather" />
+      {curentWeather === 'broken clouds' ? (
+        <Image src={Weather} alt="ImageOfWeather" />
+      ) : null}
       <p className="text-3xl">{curentWeather}</p>
-      <p className="text-5xl font-black">{curentTemp}</p>
+      <br />
+      <p className="text-5xl font-black">{curentTemp}°C</p>
+      <br />
+      <p className="text-3xl">Humidity {curentHumidity}[%]</p>
+      <p className="text-3xl">Pressure {curentPressure}[hPa]</p>
     </div>
   );
 };

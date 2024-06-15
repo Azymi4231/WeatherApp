@@ -9,6 +9,8 @@ import {
   changeTemp,
   changeWeather,
   changeCity,
+  changePressure,
+  changeHumidity,
 } from '@/src/redux/weatherSlice';
 import { RootState } from '@/src/redux/store';
 
@@ -25,12 +27,16 @@ const Search = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url);
-        const curentWeather = response.data.weather[0].description;
+        const curentWeather = response.data.weather[0].main;
         const curentTemp = response.data.main.temp;
         const curentCity = response.data.name;
+        const curentPressure = response.data.main.pressure;
+        const curentHumidity = response.data.main.humidity;
         dispatch(changeWeather(curentWeather));
         dispatch(changeTemp(curentTemp));
         dispatch(changeCity(curentCity));
+        dispatch(changePressure(curentPressure));
+        dispatch(changeHumidity(curentHumidity));
       } catch (error) {
         console.log(error);
       }
@@ -48,7 +54,7 @@ const Search = () => {
       }}
     >
       <Form className="flex flex-col">
-        <div className="relative flex flex-col py-5">
+        <div className="relative flex  flex-col py-5">
           <Field
             className="rounded-full text-black opacity-40 placeholder:text-black"
             id="Search"
