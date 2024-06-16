@@ -1,10 +1,10 @@
 'use client';
 import Image from 'next/image';
+import Sun from '../../../public/Sun.png';
+import Sunc from '../../../public/sunc.png';
 import React from 'react';
-import Weather from '../../../public/image.png';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/src/redux/store';
-
 const Main = () => {
   const curentWeather = useSelector(
     (state: RootState) => state.weather.curentWeather,
@@ -20,8 +20,10 @@ const Main = () => {
   );
   return (
     <div className="flex flex-col items-center gap-4">
-      {curentWeather === 'broken clouds' ? (
-        <Image src={Weather} alt="ImageOfWeather" />
+      {curentWeather === 'Clear' ? (
+        <Image src={Sun} alt="ImageOfWeather" />
+      ) : 'Cloudy' ? (
+        <Image src={Sunc} alt="ImageOfWeather" />
       ) : null}
       <p className="text-3xl">{curentWeather}</p>
       <br />
