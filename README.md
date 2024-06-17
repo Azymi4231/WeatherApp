@@ -11,3 +11,5 @@ Highlights
 🎨 Intuitive UI: The app boasts a clean and intuitive interface, facilitating seamless navigation and ensuring a pleasant experience for users of all backgrounds.
 
 🚀 Dynamic: Harnessing React's capabilities to deliver dynamic updates and interactive elements that enrich user interaction.
+![1](https://github.com/Azymi4231/WeatherApp/assets/171338115/e444afc6-81dc-4ef9-b078-c2ab874c9464)
+![2](https://github.com/Azymi4231/WeatherApp/assets/171338115/966a943f-8cd8-4289-aa9a-73cd179ffecb)
